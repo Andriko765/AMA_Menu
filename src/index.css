@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+*{
+  color: white;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+
+
+@layer components {
+  .max-container {
+    max-width: 1140px;
+    margin: 0 auto;
+  }
+}
+
+.input-active{
+  background-color: #343a40;
+
+}
+
+.card {
+  @apply gap-2 max-h-[370px] w-96 phone:w-fit flex justify-between phone:flex-col flex-row-reverse px-4
+}
+
