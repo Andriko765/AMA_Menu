@@ -1,5 +1,6 @@
 import { Nav,Footer} from "./components"
 import { Cider, Pizza,Snacks,NoAlchohol, Hotdog, Shots } from "./sections"
+import Alchohol from "./sections/Alchohol"
 
 
 const App = () => {
@@ -8,6 +9,7 @@ const App = () => {
         <Nav />
         <Cider/>
         <Shots/>
+        <Alchohol/>
         <Pizza/>
         <Hotdog/>
         <Snacks/>
