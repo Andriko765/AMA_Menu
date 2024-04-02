@@ -2,7 +2,7 @@
 
 const Footer = () => {
   return (
-    <footer className="border-t pt-4 px-4  desktop:max-container tablet: max-w-[720px]   mx-auto">
+    <footer className="border-t pt-4 px-4  desktop:max-container tablet: max-w-[720px] pb-8  mx-auto">
 
     <div  className=" flex  gap-10">
    
