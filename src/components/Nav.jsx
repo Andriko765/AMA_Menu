@@ -3,6 +3,8 @@ import { useState } from "react"
 const Nav = () => {
    const [inputActive, setinputActive] = useState(false);
    const [isOpen, setisOpen] = useState(false);
+   const [activeLink, setActiveLink] = useState("Cider");
+   const [catopen, setcatopen] = useState(false);
   return (
     
         <header className=" top-0 fixed bg-[#1d1b20] w-full ">
@@ -41,6 +43,64 @@ const Nav = () => {
 
 
 </div>
+<nav className="px-5 py-3  items-center desktop:max-container tablet: max-w-[720px] mx-auto ">
+   <ul className=" desktop:flex px-5 py-3  items-center desktop:max-container tablet: max-w-[720px]  tablet:flex hidden   mx-auto ">
+    <li  className={`cursor-pointer border-b-2 p-3 ${activeLink === 
+    "Cider" ? " border-b-blue-600":"border-b-2"}`}
+     onClick={() => setActiveLink("Cider")}>
+     <a href="#cider">Сидр</a>
+     </li>
+    <li className={`cursor-pointer border-b-2 p-3 ${activeLink === 
+    "Shots" ? " border-b-blue-600":"border-b-2"}`}
+    onClick={() => setActiveLink("Shots")}>
+     <a href="#shots">Шоти</a>
+    </li>
+    <li className={`cursor-pointer border-b-2 p-3 ${activeLink === 
+    "Alcho" ? " border-b-blue-600":"border-b-2"}`}
+    onClick={() => setActiveLink("Alcho")}>
+     <a href="#alcho">Важкий алкоголь</a>
+    </li>
+    <li className={`cursor-pointer border-b-2 p-3 ${activeLink === 
+    "Pizza" ? " border-b-blue-600":"border-b-2"}`}
+    onClick={() => setActiveLink("Pizza")}>
+     <a href="#pizza">Піца</a>
+    </li>
+    <li className={`cursor-pointer border-b-2 p-3 ${activeLink === 
+    "Hot-Dog" ? " border-b-blue-600":"border-b-2"}`}
+    onClick={() => setActiveLink("Hot-Dog")}>
+     <a href="#hot-dog">Хот-доги</a>
+    </li>
+    <li className={`cursor-pointer border-b-2 p-3 ${activeLink === 
+    "Snack" ? " border-b-blue-600":"border-b-2"}`}
+    onClick={() => setActiveLink("Snack")}>
+     <a href="#snack">Снеки</a>
+    </li>
+    <li className={`cursor-pointer border-b-2 p-3 ${activeLink === 
+    "NOAlcho" ? " border-b-blue-600":"border-b-2"}`}
+    onClick={() => setActiveLink("NOAlcho")}>
+     <a href="#noalcho">Б\А напої</a>
+    </li>
+   </ul>
+   
+   <button className=" flex desktop:hidden tablet:hidden border gap-3 w-fit border-[#495057] rounded-lg cursor-pointer py-0 pr-2 pl-3 h-11  text-center items-center  text-xl"   >
+   {activeLink}
+    <span>
+    <svg  className="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="#ffffff" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>
+    </span>
+    
+   </button>
+  
+
+</nav>
+
+        <div className={` absolute h-screen  top-0 w-full z-50 bg-[#1d1b20] bg-opacity-70 flex justify-start   ${catopen  ? 'block':'hidden'}`}>
+                <div className=" absolute top-1/4 left-1/4 bg-[#1d1b20] w-80 h-[400px] ml-5 rounded-xl">
+                        
+                </div>
+        </div>
+        
+
+
 
         <nav className={` absolute h-screen top-0 w-full z-50 bg-[#1d1b20] bg-opacity-70 flex justify-end ${isOpen ? 'block':'hidden'}` }>
         <div className="bg-[#1d1b20] h-screen w-[358px]">
