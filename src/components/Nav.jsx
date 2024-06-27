@@ -25,7 +25,7 @@ const Nav = () => {
               <input 
                 onFocus={() => setinputActive(true)}
                 onBlur={() => setinputActive(false)}
-               className='border border-0 rounded-[0.6rem] p-0  w-full bg-transparent h-10 focus:outline-none placeholder:text-white block'
+               className=' border-0 rounded-[0.6rem] p-0  w-full bg-transparent h-10 focus:outline-none placeholder:text-white block'
               placeholder="Пошук"/>
             </div>
            
@@ -82,7 +82,7 @@ const Nav = () => {
     </li>
    </ul>
    
-   <button className=" flex desktop:hidden tablet:hidden border gap-3 w-fit border-[#495057] rounded-lg cursor-pointer py-0 pr-2 pl-3 h-11  text-center items-center  text-xl"   >
+   <button className=" flex desktop:hidden tablet:hidden border gap-3 w-fit border-[#495057] rounded-lg cursor-pointer py-0 pr-2 pl-3 h-11  text-center items-center  text-xl"  onClick={()=> setcatopen(true)}  >
    {activeLink}
     <span>
     <svg  className="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="#ffffff" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>
@@ -93,8 +93,11 @@ const Nav = () => {
 
 </nav>
 
-        <div className={` absolute h-screen  top-0 w-full z-50 bg-[#1d1b20] bg-opacity-70 flex justify-start   ${catopen  ? 'block':'hidden'}`}>
-                <div className=" absolute top-1/4 left-1/4 bg-[#1d1b20] w-80 h-[400px] ml-5 rounded-xl">
+        <div className={` absolute h-screen  top-0 w-full z-50 bg-[#1d1b20] bg-opacity-70 flex justify-center  transition-all duration-1000   ${catopen  ? 'block':'hidden'}`}>
+                <div className={`absolute top-auto bottom-0 bg-[#343a40]    rounded-xl  max-h-[75%] h-[75%] w-[85%] mx-auto max-w-md   ${catopen ? " translate-y-0":" transition-all ease-linear duration-700 translate-y-[100%]"} `}>
+                        <button className=" w-full  h-8 flex justify-center text-center items-center" onClick={()=> setcatopen(false)}>
+                          <span className=" block h-1 rounded-t-full bg-white w-8"></span>
+                        </button>
                         
                 </div>
         </div>

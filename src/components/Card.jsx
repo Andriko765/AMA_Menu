@@ -11,7 +11,7 @@ const Card = () => {
   }
 
   return (
-    <div className=" w-fit flex flex-wrap justify-around   tablet:justify-start  gap-x-12  ">
+    <div className=" w-fit flex flex-wrap justify-around   tablet:justify-start  gap-x-12 gap-y-14 ">
       {products && Array.isArray(products)? (
         products.map(item => (
           <div className={` ${item.availability? 'card' : ' hidden'}`} key={item.id}>
@@ -23,9 +23,9 @@ const Card = () => {
                 height={200}
               />
             </Suspense>
-            <div className=" h-52 ">
+            <div className=" max-h-64 ">
               <h1 className=" font-semibold text-[1.125rem] max-w-[200px]">{item.title}</h1>
-              <p className='text-[#b9b9b9]  text-pretty text-[0.875rem] max-w-[200px] mt-1 mb-3'>{item.description}</p>
+              <p className='text-[#b9b9b9] text-ellipsis text-pretty  text-[0.875rem] w-[200px] whitespace-nowrap overflow-clip mt-1 mb-3'>{item.description}</p>
               <p className="text-[#dee2e6]">{item.price}</p>
             </div>
           </div>
