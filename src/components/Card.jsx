@@ -1,46 +1,40 @@
-import { Suspense, useContext } from 'react';
-import { ProductContext } from '../api/Data';
+import { Suspense } from "react";
 
 const Card = ({ productsInner }) => {
-	const { products } = useContext(ProductContext);
+  const Loading = () => {
+    return <div>Loading...</div>;
+  };
 
-	const Loading = () => {
-		return <div>Loading...</div>;
-	};
-
-	return (
-		<div className=" w-fit flex flex-wrap justify-around   tablet:justify-start  gap-x-12 gap-y-14 ">
-			{productsInner && Array.isArray(productsInner) ? (
-				productsInner.map((item) => (
-					<div
-						className={` ${item.availability ? 'card' : ' hidden'}`}
-						key={item.id}
-					>
-						<Suspense fallback={<Loading />}>
-							<img
-								className="rounded-xl object-cover phone:w-52 w-28 phone:h-64 h-44 "
-								src={item.img}
-								alt={item.title}
-								width={200}
-								height={200}
-							/>
-						</Suspense>
-						<div className=" max-h-64 ">
-							<h1 className=" font-semibold text-[1.125rem] max-w-[200px]">
-								{item.title}
-							</h1>
-							<p className="text-[#b9b9b9] text-ellipsis text-pretty  text-[0.875rem] w-[200px] whitespace-nowrap overflow-clip mt-1 mb-3">
-								{item.description}
-							</p>
-							<p className="text-[#dee2e6]">{item.price}</p>
-						</div>
-					</div>
-				))
-			) : (
-				<div>Loading...</div>
-			)}
-		</div>
-	);
+  return (
+    <div className=" w-fit flex flex-wrap justify-around   tablet:justify-start  gap-x-12 gap-y-14 ">
+      {productsInner && Array.isArray(productsInner) ? (
+        productsInner.map((item, i) => (
+          <div className={` ${item.availability ? "card" : " hidden"}`} key={i}>
+            <Suspense fallback={<Loading />}>
+              <img
+                className="rounded-xl object-cover phone:w-52 w-28 phone:h-64 h-44 "
+                src={item.img}
+                alt={item.title}
+                width={200}
+                height={200}
+              />
+            </Suspense>
+            <div className=" max-h-64 ">
+              <h1 className=" font-semibold text-[1.125rem] max-w-[200px]">
+                {item.title}
+              </h1>
+              <p className="text-[#b9b9b9] text-ellipsis text-pretty  text-[0.875rem] w-[200px] whitespace-nowrap overflow-clip mt-1 mb-3">
+                {item.description}
+              </p>
+              <p className="text-[#dee2e6]">{item.price}</p>
+            </div>
+          </div>
+        ))
+      ) : (
+        <div>Loading...</div>
+      )}
+    </div>
+  );
 };
 
 export default Card;

@@ -1,12 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
-
-*{
+* {
   color: white;
   margin: 0;
   padding: 0;
@@ -17,21 +15,18 @@
   font-style: normal;
 }
 
-
-
 @layer components {
   .max-container {
+    margin-inline-start: auto;
+    margin-inline-end: auto;
     max-width: 1140px;
-    margin: 0 auto;
   }
 }
 
-.input-active{
+.input-active {
   background-color: #343a40;
-
 }
 
 .card {
-  @apply gap-2 max-h-[370px] w-96 phone:w-fit flex justify-between phone:flex-col flex-row-reverse px-4
+  @apply gap-2 max-h-[370px] w-96 phone:w-fit flex justify-between phone:flex-col flex-row-reverse px-4;
 }
-
