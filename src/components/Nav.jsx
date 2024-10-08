@@ -17,7 +17,7 @@ const Nav = () => {
 						<div className="flex gap-3">
 							<Link to={'/'} onClick={() => setActiveLink(null)}>
 								<img
-									src="https://i.ibb.co/gyQNHDF/photo-2023-07-05-12-18-41.jpg"
+									src="https://i.postimg.cc/zBNY2S70/image.png"
 									width={65}
 									height={65}
 									alt="Logo"
